@@ -34,7 +34,7 @@ router.get('/', function(req, res) {
         }else if(filter.type === "less"){
 
         }
-        })}@
+        })}
     else{
        return res.json({message: "Non hai cercato nulla"});
     }
