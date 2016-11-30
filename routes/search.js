@@ -23,17 +23,10 @@ router.get('/', function(req, res) {
         });
     }
     else if(req.query.age){
-       User.find({}).each(function(filter) {
-            if (filter.type === "equal") {
             return User.find({'age': req.query.age}, function (err, users) {
                 if (err) return res.status(500).json({error: err});
                 res.json(users)
-            })
-        }else if (filter.type === "greater"){
 
-        }else if(filter.type === "less"){
-
-        }
         })}
     else{
        return res.json({message: "Non hai cercato nulla"});
