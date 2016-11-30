@@ -13,7 +13,7 @@ var search = require('./routes/search');
 var app = express();
 
 const host = 'localhost';
-const dbName = 'ES3';
+const dbName = 'ES2';
 
 const mongoose = require('mongoose');
 mongoose.connect(`mongodb://${host}/${dbName}`);

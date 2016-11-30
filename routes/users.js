@@ -31,17 +31,10 @@ router.post('/',middle, function (req, res, next) {
 });
 router.put('/:id',middle,function(req,res,next){
   if (req.params.id == 'all'){
-    User.find({}).exec(function(err, user){
-      if(err) return res.status(500).json({message: 'Utente non trovato'});
-      if(!user) return res.status(404).json({message: 'Utente non trovato'});
-      for(key in req.body) {
-        user[key] = req.body[key];
-      } //UPDATE ?
-      user.save(function(err){
-        if(err) return res.status(500).json({message: 'Non riesco a salvare'});
-        res.json(user);
-      })
-    })
+      var conditions = {}, update =( {name : req.body.name},{surname : req.body.surname}/*,{age: req.body.age}*/), options = { multi: true };
+      return User.update(conditions, update, options, callback);
+      function callback (err, numAffected) {
+      }
   }
   else{
   User.findOne({_id: req.params.id}).exec(function(err, user){
