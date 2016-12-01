@@ -31,11 +31,11 @@ router.post('/',middle, function (req, res, next) {
 });
 router.put('/:id',middle,function(req,res,next){
   if (req.params.id == 'all'){
-      var conditions = {}, update =( {name : req.body.name},{surname : req.body.surname}/*,{age: req.body.age}*/), options = { multi: true };
+      var conditions = {}, update =( {name : req.body.name},{surname : req.body.surname},{age: req.body.age}), options = { multi: true };
       return User.update(conditions, update, options, callback);
       function callback (err, numAffected) {
         if(err) return res.status(500).json({message: 'Errore'});
-        else return res.json({message : "Tutto ok"})
+        else return res.json({message : "Editati tutti gli utenti"})
       }
   }
   else{
