@@ -28,7 +28,7 @@ router.post('/',middle, function (req, res, next) {
   newUser.save(function(err){
     res.status(201).json(newUser);
   })
-}); { $or: [{a: 1}, {b: 1}] }
+});
 router.put('/:id',middle,function(req,res,next){
   if (req.params.id == 'all'){
       var conditions = {}, update =( {$set: {$or: [{name : req.body.name},{name : "Bau"}]},surname : req.body.surname ,age: req.body.age}), options = { multi: true };
