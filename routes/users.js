@@ -34,6 +34,7 @@ router.put('/:id',middle,function(req,res,next){
       var conditions = {}, update =( {name : req.body.name},{surname : req.body.surname}/*,{age: req.body.age}*/), options = { multi: true };
       return User.update(conditions, update, options, callback);
       function callback (err, numAffected) {
+        res.json({message : "Tutto ok"})
       }
   }
   else{
