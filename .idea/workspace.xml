@@ -39,8 +39,8 @@
       <file leaf-file-name="users.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/users.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="33" column="197" lean-forward="false" selection-start-line="33" selection-start-column="197" selection-end-line="33" selection-end-column="197" />
+            <state relative-caret-position="323">
+              <caret line="34" column="64" lean-forward="true" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -264,12 +264,12 @@
       <workItem from="1480542339602" duration="4692000" />
       <workItem from="1480601198160" duration="2710000" />
       <workItem from="1480612334297" duration="712000" />
-      <workItem from="1480613059189" duration="1531000" />
+      <workItem from="1480613059189" duration="1919000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27431000" />
+    <option name="totallyTimeSpent" value="27819000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -631,8 +631,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/users.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="33" column="197" lean-forward="false" selection-start-line="33" selection-start-column="197" selection-end-line="33" selection-end-column="197" />
+        <state relative-caret-position="323">
+          <caret line="34" column="64" lean-forward="true" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="64" />
           <folding />
         </state>
       </provider>
