@@ -28,10 +28,10 @@ router.post('/',middle, function (req, res, next) {
   newUser.save(function(err){
     res.status(201).json(newUser);
   })
-});  // $or:[ {'name': { $regex : m}}, {'surname': { $regex : m}} ]
+});
 router.put('/:id',middle,function(req,res,next){
   if (req.params.id == 'all'){
-      var conditions = {}, update =( {$or: [{name :  req.body.name},{name : user.name}]},{$or: [{surname :  req.body.surname},{surname : user.surname}]},{$sor: [{age :  req.body.age},{age : user.age}]}), options = { multi: true };
+      var conditions = {}, update =( {$or: [{name :  req.body.name},{name : users.name}]},{$or: [{surname :  req.body.surname},{surname : users.surname}]},{$sor: [{age :  req.body.age},{age : users.age}]}), options = { multi: true };
       return User.update(conditions, update, options, callback);
       function callback (err, numAffected) {
         if(err) return res.status(500).json({message: 'Errore'});
