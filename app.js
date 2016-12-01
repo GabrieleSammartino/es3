@@ -11,12 +11,13 @@ var search = require('./routes/search');
 
 
 var app = express();
-
-const host = 'localhost';
+/*
+const host = 'localhost'; In locale
 const dbName = 'ES2';
-
+*/
 const mongoose = require('mongoose');
-mongoose.connect(`mongodb://${host}/${dbName}`);
+mongoose.connect(`mongodb://gabriele.sammartino:asd123@ds113958.mlab.com:13958/gabriele`);
+
 
 var db = mongoose.connection;
 db.on('error', function() {
