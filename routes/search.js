@@ -23,6 +23,7 @@ router.get('/', function(req, res) {
         });
     }
     else if(req.query.age){
+
             return User.find({'age': req.query.age}, function (err, users) {
                 if (err) return res.status(500).json({error: err});
                 res.json(users)
@@ -32,7 +33,5 @@ router.get('/', function(req, res) {
        return res.json({message: "Non hai cercato nulla"});
     }
 });
-
-
 
 module.exports = router;

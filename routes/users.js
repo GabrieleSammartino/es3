@@ -31,7 +31,7 @@ router.post('/',middle, function (req, res, next) {
 });
 router.put('/:id',middle,function(req,res,next){
   if (req.params.id == 'all'){
-      var conditions = {}, update =( {$set: {name : req.body.name,surname : req.body.surname,age: req.body.age}}), options = { multi: true };
+      var conditions = {}, update =( {$set: {name : req.body.name || user.name, surname : req.body.surname || user.surname, age: req.body.age || user.age}}), options = { multi: true };
       return User.update(conditions, update, options, callback);
       function callback (err, numAffected) {
         if(err) return res.status(500).json({message: 'Errore'});
@@ -73,16 +73,3 @@ router.delete('/', function (req, res) {
 
 module.exports = router;
 
-/* if(req.params.id == 'editall'){
- User.find({}).exec(function(err, user){
- if(err) return res.status(500).json({message: 'Utenti non trovati'});
- if(!user) return res.status(404).json({message: 'Utenti non trovati'});
- for(key in req.body) {
- user[key] = req.body[key];
- }
- user.save(function(err){
- if(err) return res.status(500).json({message: 'Non riesco a salvare'});
- res.json(user);
- })
- })}
- else{*/
