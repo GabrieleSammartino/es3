@@ -31,7 +31,7 @@ router.post('/',middle, function (req, res, next) {
 });
 router.put('/:id',middle,function(req,res,next){
   if (req.params.id == 'all'){
-      var conditions = {}, update =( {$set: {name : req.body.name || user.name, surname : req.body.surname || user.surname, age: req.body.age || user.age}}), options = { multi: true };
+      var conditions = {}, update =( {$set: {name : req.body.name || name, surname : req.body.surname || surname , age: req.body.age || age}}), options = { multi: true };
       return User.update(conditions, update, options, callback);
       function callback (err, numAffected) {
         if(err) return res.status(500).json({message: 'Errore'});
