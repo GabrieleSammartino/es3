@@ -29,10 +29,6 @@ router.post('/',middle, function (req, res, next) {
     res.status(201).json(newUser);
   })
 });
-
-
-
-
 router.put('/:id',middle,function(req,res,next){
     var _setObj = JSON.parse(JSON.stringify({
         name: req.body.name ? req.body.name : undefined,
