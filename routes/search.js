@@ -34,14 +34,14 @@ router.get('/', function(req, res) {
 });
 
 router.get('/maggiore', function(req, res){
-    return User.find({ qty: { $gt: 21}}, function (err, users) {
+    return User.find({ age: { $gt: req.query.age}}, function (err, users) {
         if (err) return res.status(500).json({error: err});
         res.json(users)
 
     })
 })
 router.get('/minore', function(req, res){
-    return User.find({ qty: { $lt: req.query.age}}, function (err, users) {
+    return User.find({ age: { $lt: req.query.age}}, function (err, users) {
         if (err) return res.status(500).json({error: err});
         res.json(users)
 
