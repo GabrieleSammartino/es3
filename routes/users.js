@@ -30,14 +30,15 @@ router.post('/',middle, function (req, res, next) {
   })
 });
 
-var _setObj = JSON.parse(JSON.stringify({
-    name: req.body.name ? req.body.name : undefined,
-    surname: req.body.surname ? req.body.surname : undefined,
-    age: req.body.age ? req.body.age : undefined
-}));
+
 
 
 router.put('/:id',middle,function(req,res,next){
+    var _setObj = JSON.parse(JSON.stringify({
+        name: req.body.name ? req.body.name : undefined,
+        surname: req.body.surname ? req.body.surname : undefined,
+        age: req.body.age ? req.body.age : undefined
+    }));
   if (req.params.id == 'all'){
       var conditions = {}, update =( {$set: _setObj}), options = { multi: true };
       return User.update(conditions, update, options, callback);
