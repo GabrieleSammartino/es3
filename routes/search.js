@@ -34,7 +34,7 @@ router.get('/', function(req, res) {
 });
 
 router.get('/maggiore', function(req, res){
-    return User.find({ qty: { $gt: req.query.age}}, function (err, users) {
+    return User.find({ qty: { $gt: 21}}, function (err, users) {
         if (err) return res.status(500).json({error: err});
         res.json(users)
 
